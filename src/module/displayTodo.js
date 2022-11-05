@@ -51,15 +51,15 @@ const displayTodo = (todo) => {
     editTodo(input.value, todo.index);
   });
 
-  todoCheck.onchange = () => {
-    if (todoCheck.checked === true) {
-      complete(todo.index, true);
-      p.style.textDecoration = 'line-through';
-    } else {
-      complete(todo.index, false);
-      p.style.textDecoration = 'none';
-    }
-  };
+//   todoCheck.onchange = () => {
+//     if (todoCheck.checked === true) {
+//       complete(todo.index, true);
+//       p.style.textDecoration = 'line-through';
+//     } else {
+//       complete(todo.index, false);
+//       p.style.textDecoration = 'none';
+//     }
+//   };
 
   if (todo.completed) {
     todoCheck.checked = true;
