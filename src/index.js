@@ -27,9 +27,9 @@ window.addEventListener('load', () => {
     const listEl = document.querySelector('.taskContainer');
 
     tasks.forEach((element) => {
-    const taskContent = document.createElement('div');
-    taskContent.classList.add('task');
-    taskContent.innerHTML = ` 
+      const taskContent = document.createElement('div');
+      taskContent.classList.add('task');
+      taskContent.innerHTML = ` 
     <input type='checkbox'>
     ${element.description}
     `;
