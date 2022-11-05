@@ -51,7 +51,6 @@ const displayTodo = (todo) => {
     editTodo(input.value, todo.index);
   });
 
-
   if (todo.completed) {
     todoCheck.checked = true;
     p.style.textDecoration = 'line-through';
