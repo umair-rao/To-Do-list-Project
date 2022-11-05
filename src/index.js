@@ -7,7 +7,6 @@ window.addEventListener("load", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const taskEnter = input.value;
     const tasks = [
       {
         description: "Take breakfast",
@@ -22,7 +21,7 @@ window.addEventListener("load", () => {
       {
         description: "Take Dineer",
         completed: true,
-        index: "3",
+        index: "taskInput3",
       },
     ];
 
@@ -32,41 +31,10 @@ window.addEventListener("load", () => {
       const taskContent = document.createElement("div");
       taskContent.classList.add("task");
       taskContent.innerHTML = ` 
-	  	<input type="checkbox">
-	  	${element.description}
-		  `;
+	  <input type='checkbox'>
+	  ${element.description}
+	  `;
       listEl.appendChild(taskContent);
     });
-
-    //     const task = input.value;
-
-    //     const taskEl = document.createElement("div");
-    //     taskEl.classList.add("task");
-
-    //     const taskContent = document.createElement("div");
-    //     taskContent.classList.add("list-items");
-
-    //     taskEl.appendChild(taskContent);
-
-    //     const taskCheck = document.createElement("input");
-    //     taskCheck.type = "checkbox";
-    //     taskContent.appendChild(taskCheck);
-
-    //     const taskInput = document.createElement("input");
-    //     taskInput.classList.add("add-item");
-    //     taskContent.type = "text";
-    //     taskInput.value = task;
-    //     taskInput.setAttribute("readonly", "readonly");
-
-    //     taskContent.appendChild(taskInput);
-
-    //     listEl.appendChild(taskContent);
   });
 });
-
-{
-  /* <div class="list-items" id="tasks">
-         <input type="checkbox">
-        <input id="new-item" class="add-item" placeholder="Add to your list..." type="text">
-</div> */
-}
