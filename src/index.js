@@ -5,32 +5,31 @@ window.addEventListener('load', () => {
   const input = document.querySelector('#item-add');
   const listEl = document.querySelector('.taskContainer');
 
-  form.addEventListener('submit', (e) => {  
+form.addEventListener('submit', (e) => {  
     e.preventDefault();
 
     const task = input.value;
 
-    const task_el = document.createElement('div');
-    task_el.classList.add('task');
+    const taskEl = document.createElement('div');
+    taskEl.classList.add('task');
 
     const taskContent = document.createElement('div');
     taskContent.classList.add('list-items');
 
-    task_el.appendChild(taskContent);
+    taskEl.appendChild(taskContent);
 
-    const task_check = document.createElement('input');
-    task_check.type = 'checkbox';
-    taskContent.appendChild(task_check);
+    const taskCheck = document.createElement('input');
+    taskCheck.type = 'checkbox';
+    taskContent.appendChild(taskCheck);
 
-    const task_input_el = document.createElement('input');
-    task_input_el.classList.add('add-item');
+    const taskInput = document.createElement('input');
+    taskInput.classList.add('add-item');
     taskContent.type = 'text';
-    task_input_el.value = task;
-    task_input_el.setAttribute('readonly', 'readonly');
+    taskInput.value = task;
+    taskInput.setAttribute('readonly', 'readonly');
 
-    taskContent.appendChild(task_input_el);
+    taskContent.appendChild(taskInput);
 
     listEl.appendChild(taskContent);
+  });
 });
-});
-  
