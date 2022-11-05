@@ -1,7 +1,107 @@
-body {
-    background-color: bisque;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.hello {
-	color: red;
-  }
+body {
+    background-color: rgb(221, 202, 193);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-left: 30%;
+  background-color: aliceblue;
+  width: 500px;
+  height: 100%;
+  border: 2px solid rgb(224, 220, 220);
+}
+
+.title {
+  display: flex;
+  border-bottom: 2px solid lightgrey;
+  height: 50px;
+}
+
+#heading {
+  font-size: 25px;
+  padding-top: 2%;
+  padding-left: 2%;
+}
+
+.add-list {
+  display: flex;
+  border-bottom: 2px solid lightgray;
+  height: 50px;
+  font-size: 25px;
+  text-align: left;
+  padding-top: 8px;
+}
+
+.add-item:focus {
+  outline: none;
+}
+
+#enter-btn,
+#refresh-btn {
+  width: 40px;
+  background: transparent;
+  border: none;
+  padding-left: 39%;
+  font-size: 20px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#refresh-btn {
+  padding-left: 60%;
+}
+
+.add-list input {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.clear-btn {
+  height: 50px;
+  background-color: lightgrey;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.clear-button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  padding-top: 15px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.clear-button:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.taskContainer {
+  height: auto;
+  padding-left: 8px;
+}
+
+.list-items {
+  
+  height: 50px;
+  border-bottom: 2px solid lightgray;
+}
+
+.list-items input {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
+}

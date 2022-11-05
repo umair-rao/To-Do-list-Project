@@ -1,20 +1,45 @@
-import _ from 'lodash';
-import printMe from './print.js';
 import './style.css';
 
-function component() {
-	const element = document.createElement('div');
-	const btn = document.createElement('button');
-  
-	element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-	element.classList.add('hello');
+window.addEventListener('load', ()=>{
+	const form = document.querySelector('.add-list');
+	const input = document.querySelector('#item-add');
+	const list_el = document.querySelector('.taskContainer');
 
-	btn.innerHTML = 'Click me and check the console!';
-	btn.onclick = printMe;
+	form.addEventListener('submit',(e) => {
+		e.preventDefault();
 
-	element.appendChild(btn);
+		const task = input.value;
+
+		const task_el = document.createElement('div');
+		task_el.classList.add('task');
+
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('list-items');
+
+		task_el.appendChild(task_content_el);
+
+		const task_check = document.createElement('input');
+		task_check.type = 'checkbox';
+		task_content_el.appendChild(task_check);
+
+		const task_input_el = document.createElement('input');
+		task_input_el.classList.add('add-item');
+		task_content_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
+
+		task_content_el.appendChild(task_input_el);
+
+		list_el.appendChild(task_content_el);
+	})
+});
+
+{/* <div class="list-items" id="tasks">
+ <div class="task">
+<input type="checkbox">
+                    <input id="new-item" class="add-item" placeholder="Add to your list..." type="text">
+                </form>
+        </div> */}
   
-	return element;
-  }
+
   
-  document.body.appendChild(component());
