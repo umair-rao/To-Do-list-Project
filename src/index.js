@@ -1,39 +1,21 @@
+import addTodo from './module/addTodo.js';
+import displayTodo from './module/displayTodo.js';
+import Todo from './module/Todo.js';
 import './style.css';
 
-window.addEventListener('load', () => {
-  const form = document.querySelector('.add-list');
+const mainForm = document.querySelector('.form-main');
+const inputElement = document.querySelector('#todo');
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+todoList.forEach((todo) => {
+  displayTodo(todo);
+});
 
-    const tasks = [
-      {
-        description: 'Take breakfast',
-        completed: true,
-        index: '1',
-      },
-      {
-        description: 'Take Lunch',
-        completed: false,
-        index: '2',
-      },
-      {
-        description: 'Take Dineer',
-        completed: true,
-        index: 'taskInput3',
-      },
-    ];
+mainForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const todo = new Todo(inputElement.value, false, todoList.length + 1);
 
-    const listEl = document.querySelector('.taskContainer');
-
-    tasks.forEach((element) => {
-      const taskContent = document.createElement('div');
-      taskContent.classList.add('task');
-      taskContent.innerHTML = ` 
-    <input type='checkbox'>
-    ${element.description}
-    `;
-      listEl.appendChild(taskContent);
-    });
-  });
+  todoList.push(todo);
+  addTodo(todoList);
+  mainForm.reset();
 });
