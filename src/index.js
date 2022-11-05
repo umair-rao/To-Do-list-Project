@@ -1,20 +1,39 @@
-import _ from 'lodash';
-import printMe from './print.js';
 import './style.css';
 
-function component() {
-	const element = document.createElement('div');
-	const btn = document.createElement('button');
-  
-	element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-	element.classList.add('hello');
+window.addEventListener('load', () => {
+  const form = document.querySelector('.add-list');
 
-	btn.innerHTML = 'Click me and check the console!';
-	btn.onclick = printMe;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-	element.appendChild(btn);
-  
-	return element;
-  }
-  
-  document.body.appendChild(component());
+    const tasks = [
+      {
+        description: 'Take breakfast',
+        completed: true,
+        index: '1',
+      },
+      {
+        description: 'Take Lunch',
+        completed: false,
+        index: '2',
+      },
+      {
+        description: 'Take Dineer',
+        completed: true,
+        index: 'taskInput3',
+      },
+    ];
+
+    const listEl = document.querySelector('.taskContainer');
+
+    tasks.forEach((element) => {
+      const taskContent = document.createElement('div');
+      taskContent.classList.add('task');
+      taskContent.innerHTML = ` 
+    <input type='checkbox'>
+    ${element.description}
+    `;
+      listEl.appendChild(taskContent);
+    });
+  });
+});
