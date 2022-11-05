@@ -1,39 +1,38 @@
-import "./style.css";
+import './style.css';
 
-window.addEventListener("load", () => {
-  const form = document.querySelector(".add-list");
-  const input = document.querySelector("#item-add");
+window.addEventListener('load', () => {
+  const form = document.querySelector('.add-list');
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const tasks = [
       {
-        description: "Take breakfast",
+        description: 'Take breakfast',
         completed: true,
-        index: "1",
+        index: '1',
       },
       {
-        description: "Take Lunch",
+        description: 'Take Lunch',
         completed: false,
-        index: "2",
+        index: '2',
       },
       {
-        description: "Take Dineer",
+        description: 'Take Dineer',
         completed: true,
-        index: "taskInput3",
+        index: 'taskInput3',
       },
     ];
 
-    const listEl = document.querySelector(".taskContainer");
+    const listEl = document.querySelector('.taskContainer');
 
     tasks.forEach((element) => {
-      const taskContent = document.createElement("div");
-      taskContent.classList.add("task");
-      taskContent.innerHTML = ` 
-	  <input type='checkbox'>
-	  ${element.description}
-	  `;
+    const taskContent = document.createElement('div');
+    taskContent.classList.add('task');
+    taskContent.innerHTML = ` 
+    <input type='checkbox'>
+    ${element.description}
+    `;
       listEl.appendChild(taskContent);
     });
   });
