@@ -1,5 +1,6 @@
 import editTodo from './editTodo.js';
 import deleteTodo from './deleteTodo.js';
+import complete from './complete.js';
 
 const todoContainer = document.querySelector('#todo-container');
 
@@ -50,6 +51,16 @@ const displayTodo = (todo) => {
     e.preventDefault();
     editTodo(input.value, todo.index);
   });
+
+  todoCheck.onchange = () => {
+    if (todoCheck.checked === true) {
+      complete(todo.index, true);
+      p.style.textDecoration = 'line-through';
+    } else {
+      complete(todo.index, false);
+      p.style.textDecoration = 'none';
+    }
+  };
 
   if (todo.completed) {
     todoCheck.checked = true;
