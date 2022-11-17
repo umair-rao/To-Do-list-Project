@@ -6,7 +6,7 @@
 
 
 #Live-Website-link
-https://umair-rao.github.io/To-Do-list-Project/
+https://umair-rao.github.io/To-Do-list-Project/dist
 
 
 ## Built With
