@@ -1,7 +1,7 @@
 import addTodo from './module/addTodo.js';
 import displayTodo from './module/displayTodo.js';
 import Todo from './module/Todo.js';
-import './style.css';
+import './styles/style.css';
 
 const mainForm = document.querySelector('.form-main');
 const inputElement = document.querySelector('#todo');
